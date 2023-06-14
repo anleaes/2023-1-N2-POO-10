@@ -43,6 +43,8 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'rest_framework',
+    'emprestimos.apps.emprestimosConfig',
+    'editoras.apps.editorasConfig',
 ]
 
 MIDDLEWARE = [
