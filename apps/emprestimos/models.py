@@ -14,7 +14,9 @@ class Emprestimo(models.Model):
     def __str__(self):
         return self.livro
        
-       
+       #
+       #testeeeeeeeeee
+       #
 #     podemos obter e definir os valores dos atributos da classe Emprestimo utilizando os seguintes metodos:
 #     emprestimo = Emprestimo(livro, usuario, data_emprestimo, data_devolucao)
 #     print(emprestimo.get_livro())  # Obtém o livro do empréstimo
