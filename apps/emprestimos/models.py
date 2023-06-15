@@ -2,13 +2,13 @@ from django.db import models
 
 class Emprestimo(models.Model):
     livro = models.CharField('Livro', max_length=50)
-    usuario = models.CharField('Usuário', max_length=50)
-    data_emprestimo = models.DateField('Data de Empréstimo')
+    usuario = models.CharField('Usuario', max_length=50)
+    data_emprestimo = models.DateField('Data de Emprestimo')
     data_devolucao = models.DateField('Data de Devolução')
 
     class Meta:
-        verbose_name = 'Empréstimo'
-        verbose_name_plural = 'Empréstimos'
+        verbose_name = 'Emprestimo'
+        verbose_name_plural = 'Emprestimos'
         ordering = ['id']
 
     def __str__(self):
