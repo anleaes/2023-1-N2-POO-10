@@ -45,7 +45,7 @@ INSTALLED_APPS = [
     'rest_framework',
     'autor.apps.AutorConfig',
     'editoras.apps.EditoraConfig',
-    'emprestimos.apps.emprestimosConfig',
+    'emprestimos.apps.EmprestimoConfig',
 ]
 
 MIDDLEWARE = [
