@@ -1,5 +1,4 @@
 @startuml
-
 class Biblioteca {
   - nome: String
   - endereco: String
@@ -16,9 +15,11 @@ class Biblioteca {
 
 class Livro {
   - titulo: String
-  - autor: String
   - isbn: String
   - disponivel: boolean
+  - autor: Autor
+  - editora: Editora
+  - categoria: Categoria
   + emprestar()
   + devolver()
 }
@@ -35,7 +36,6 @@ class Usuario {
 class Autor {
   - nome: String
   - nacionalidade: String
-  - livrosPublicados: Livro
   + adicionarLivroPublicado(livro: Livro)
   + removerLivroPublicado(livro: Livro)
   + listarLivrosPublicados()
@@ -44,7 +44,6 @@ class Autor {
 class Editora {
   - nome: String
   - endereco: String
-  - livrosPublicados Livro
   + adicionarLivroPublicado(livro: Livro)
   + removerLivroPublicado(livro: Livro)
   + listarLivrosPublicados()
@@ -57,19 +56,18 @@ class Emprestimo {
   - dataDevolucao: Date
 }
 
-class Reserva {
-  - livro: Livro
-  - usuario: Usuario
-  - dataReserva: Date
+class Categoria {
+  - nome: string
+  - descricao: string
 }
 
-Biblioteca "1" -- "0.." Livro
-Biblioteca "1" -- "0.." Usuario
-Livro "1" -- "0..1" Autor
-Livro "1" -- "0..1" Editora
-Livro "1" -- "0.." Emprestimo
-Livro "1" -- "0.." Reserva
-Usuario "1" -- "0.." Emprestimo
-Usuario "1" -- "0.." Reserva
 
+
+Biblioteca *-- Livro
+Biblioteca *-- Usuario
+Livro *-- Autor
+Livro *-- Editora
+Livro --* Emprestimo
+Usuario --* Emprestimo
+Livro *-- Categoria
 @enduml
