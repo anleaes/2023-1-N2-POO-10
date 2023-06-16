@@ -2,3 +2,5 @@ db.sqlite3
 bibliotecaapp/__pycache__/*
 /apps/autor/__pycache__/*
 /apps/autor/migrations/*
+/apps/biblioteca/__pycache__/*
+/apps/biblioteca/migrations/*
