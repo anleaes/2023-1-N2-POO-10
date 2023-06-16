@@ -3,4 +3,8 @@ bibliotecaapp/__pycache__/*
 /apps/autor/__pycache__/*
 /apps/autor/migrations/*
 /apps/editoras/__pycache__/*
+/apps/editoras/migrations/*
+/apps/emprestimos/__pycache__/*
 /apps/emprestimos/migrations/*
+/apps/biblioteca/__pycache__/*
+/apps/biblioteca/migrations/*
