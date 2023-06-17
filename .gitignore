@@ -8,3 +8,5 @@ bibliotecaapp/__pycache__/*
 /apps/emprestimos/migrations/*
 /apps/biblioteca/__pycache__/*
 /apps/biblioteca/migrations/*
+/apps/categorias/__pycache__/*
+/apps/categorias/migrations/*
