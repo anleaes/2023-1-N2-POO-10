@@ -1,8 +1,8 @@
 from django.db import models
 
 class Emprestimo(models.Model):
-    livro = models.CharField('Livro', max_length=50)
-    usuario = models.CharField('Usuario', max_length=50)
+    #livro = models.CharField('Livro', max_length=50)
+   # usuario = models.CharField('Usuario', max_length=50)
     data_emprestimo = models.DateField('Data de Emprestimo')
     data_devolucao = models.DateField('Data de Devolução')
 
@@ -12,7 +12,9 @@ class Emprestimo(models.Model):
         ordering = ['id']
 
     def __str__(self):
-        return self.livro
+        return self.name
+    #def __str__(self):
+        #return self.livro
        
        
 #     podemos obter e definir os valores dos atributos da classe Emprestimo utilizando os seguintes metodos:

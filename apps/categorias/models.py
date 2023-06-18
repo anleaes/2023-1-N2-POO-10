@@ -10,7 +10,7 @@ class Categoria(models.Model):
     
     #Criando a classe meta
         
-     class Meta:
+    class Meta:
             verbose_name_plural = "Categorias"
 
 
