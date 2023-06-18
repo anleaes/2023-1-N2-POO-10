@@ -1,4 +1,5 @@
 from django.db import models
+from django_extensions.db.fields import OneToManyField
 
 # Create your models here.
 #Criando a classe biblioteca
@@ -9,8 +10,8 @@ class Biblioteca(models.Model):
     
     #relacionando atributos com Livro e Usuário (outras classes)
     
-    livros = models.ForeignKey('Livro', on_delete=models.CASCADE, related_name='biblioteca')
-    usuarios = models.ForeignKey('Usuario', on_delete=models.CASCADE, related_name='biblioteca')
+    livros = OneToManyField('Livro', related_name='biblioteca')
+    usuarios = OneToManyField('Usuario', related_name='biblioteca')
     
     #criando os métodos de adição e remoção de livro da biblioteca, atrelado a classe "Livro"
     
@@ -23,27 +24,15 @@ class Biblioteca(models.Model):
     #criando os métodos de busca de livro
     
     def buscarLivroPorTitulo(self, titulo):
-        livros_encontrados = []
-    for livro in self.livros.all():
-        if livro.titulo == titulo:
-            livros_encontrados.append(livro)
-    return livros_encontrados
+        return self.livros.filter(titulo__icontains=titulo)
 
     def buscarLivroPorAutor(self, autor):
-        livros_encontrados = []
-    for livro in self.livros.all():
-        if livro.autor.nome == autor:
-            livros_encontrados.append(livro)
-    return livros_encontrados
+        return self.livros.filter(autor__icontains=autor)
 
     #criando o método de mostrar disponibilidade
     
     def listarLivrosDisponiveis(self):
-        livros_disponiveis = []
-    for livro in self.livros.all():
-        if not Emprestimo.objects.filter(livro=livro).exists():
-            livros_disponiveis.append(livro)
-    return livros_disponiveis
+        return self.livros.exclude(emprestimo__isnull=False)
 
     #criando os métodos de registro de usuário, atrelado a classe 'Usuario'
     
