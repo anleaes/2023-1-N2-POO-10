@@ -47,7 +47,7 @@ INSTALLED_APPS = [
     'editoras.apps.EditorasConfig',
     'emprestimos.apps.EmprestimosConfig',
     'biblioteca.apps.BibliotecaConfig',
-    'categorias.apps.CategoriesConfig',
+    'categorias.apps.CategoriasConfig',
 ]
 
 MIDDLEWARE = [
