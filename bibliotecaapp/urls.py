@@ -20,4 +20,5 @@ urlpatterns = [
     path('autor/', include('autor.urls', namespace='autor')),
     path('editoras/', include('editoras.urls', namespace='editoras')),
     path('emprestimos/', include('emprestimos.urls', namespace='emprestimos')),
+    path('biblioteca/', include('biblioteca.urls', namespace='biblioteca')),
 ]
