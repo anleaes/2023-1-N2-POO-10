@@ -10,8 +10,8 @@ class Biblioteca(models.Model):
     
     #relacionando atributos com Livro e Usuário (outras classes)
     
-    livros = OneToManyField('Livro', related_name='biblioteca')
-    usuarios = OneToManyField('Usuario', related_name='biblioteca')
+    #livros = OneToManyField('Livro', related_name='biblioteca')
+    #usuarios = OneToManyField('Usuario', related_name='biblioteca')
     
     #criando os métodos de adição e remoção de livro da biblioteca, atrelado a classe "Livro"
     

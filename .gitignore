@@ -10,3 +10,7 @@ bibliotecaapp/__pycache__/*
 /apps/biblioteca/migrations/*
 /apps/categorias/__pycache__/*
 /apps/categorias/migrations/*
+/apps/livros/__pycache__/*
+/apps/livros/migrations/*
+/apps/usuarios/__pycache__/*
+/apps/usuarios/migrations/*
