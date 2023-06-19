@@ -1,23 +1,17 @@
 from django.db import models
+from livros.models import Livro
+from usuarios.models import Usuario
 
 class Emprestimo(models.Model):
-    #livro = models.CharField('Livro', max_length=50)
-   # usuario = models.CharField('Usuario', max_length=50)
-    data_emprestimo = models.DateField('Data de Emprestimo')
+    livro = models.ForeignKey(Livro, on_delete=models.CASCADE, related_name="livro", default=None)
+    usuario = models.ForeignKey(Usuario, on_delete=models.CASCADE, related_name="usuario", default=None)
+    data_emprestimo = models.DateField('Data de Empréstimo')
     data_devolucao = models.DateField('Data de Devolução')
 
     class Meta:
-        verbose_name = 'Emprestimo'
-        verbose_name_plural = 'Emprestimos'
+        verbose_name = 'Empréstimo'
+        verbose_name_plural = 'Empréstimos'
         ordering = ['id']
 
     def __str__(self):
-        return self.name
-    #def __str__(self):
-        #return self.livro
-       
-       
-#     podemos obter e definir os valores dos atributos da classe Emprestimo utilizando os seguintes metodos:
-#     emprestimo = Emprestimo(livro, usuario, data_emprestimo, data_devolucao)
-#     print(emprestimo.get_livro())  # Obtém o livro do empréstimo
-#     emprestimo.set_data_devolucao(nova_data_devolucao)  # Define uma nova data de devolução
+        return f'{self.livro.titulo} emprestado por {self.usuario.nome}' 
